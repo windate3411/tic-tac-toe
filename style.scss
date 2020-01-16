@@ -16,12 +16,27 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
+  align-items: center;
+  justify-items: center;
   grid-template-columns: repeat(3,auto);
 }
 
 .cell {
   width: $cell-size;
   height: $cell-size;
-  background-color:$cell-color;
   border: $cell-border;
+
+  //remove outer border
+  &:first-child ,&:nth-child(2),&:nth-child(3){
+    border-top: none;
+  }
+  &:nth-child(3n+1){
+    border-left: none;
+  }
+  &:nth-child(3n+3){
+    border-right: none;
+  }
+  &:nth-child(7) ,&:nth-child(8),&:nth-child(9){
+    border-bottom: none;
+  }
 }

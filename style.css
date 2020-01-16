@@ -18,6 +18,10 @@ body {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
 }
@@ -25,7 +29,22 @@ body {
 .cell {
   width: 100px;
   height: 100px;
-  background-color: black;
-  border: 1px solid white;
+  border: 1px solid black;
+}
+
+.cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n+1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n+3) {
+  border-right: none;
+}
+
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+  border-bottom: none;
 }
 /*# sourceMappingURL=style.css.map */
