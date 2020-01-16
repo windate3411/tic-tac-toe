@@ -120,4 +120,22 @@ body {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background-color: lightgray;
+  width: 90px;
+  height: 90px;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  width: 63px;
+  height: 63px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,5 @@
+@mixin circleMark {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}

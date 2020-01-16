@@ -1,5 +1,5 @@
 @import "./variables";
-
+@import "./mixin";
 
 * {
   box-sizing: border-box;
@@ -98,5 +98,22 @@ body {
   }
   &::after{
      transform: rotate(-45deg);
+  }
+}
+
+// board circle hover 
+
+.board.circle .cell:not(.x):not(.circle):hover{
+  &::before{
+    @include circleMark(); 
+    background-color: $hover-color;
+    width: $mark-size;
+    height: $mark-size;
+  }
+  &::after{
+    @include circleMark();
+    background-color:white;
+    width: $mark-size*0.7;
+    height: $mark-size*0.7;
   }
 }
