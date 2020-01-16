@@ -25,6 +25,10 @@ body {
   width: $cell-size;
   height: $cell-size;
   border: $cell-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   //remove outer border
   &:first-child ,&:nth-child(2),&:nth-child(3){
@@ -39,4 +43,20 @@ body {
   &:nth-child(7) ,&:nth-child(8),&:nth-child(9){
     border-bottom: none;
   }
+}
+
+.cell.x {
+    &::before,&::after {
+      content: '';
+      position: absolute;
+      width: $mark-size*0.15;
+      height: $mark-size;
+      background-color: $cell-color;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
 }

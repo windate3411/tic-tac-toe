@@ -30,6 +30,16 @@ body {
   width: 100px;
   height: 100px;
   border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
 }
 
 .cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
@@ -46,5 +56,23 @@ body {
 
 .cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
   border-bottom: none;
+}
+
+.cell.x::before, .cell.x::after {
+  content: '';
+  position: absolute;
+  width: 13.5px;
+  height: 90px;
+  background-color: black;
+}
+
+.cell.x::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cell.x::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 /*# sourceMappingURL=style.css.map */
