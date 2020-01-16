@@ -121,7 +121,7 @@ body {
 //button & winning message
 
 .winning-message {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0,0.9);
@@ -148,3 +148,6 @@ body {
     }
   }
 }
+.show {
+    display: flex;
+  }
