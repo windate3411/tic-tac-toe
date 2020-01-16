@@ -44,7 +44,7 @@ body {
     border-bottom: none;
   }
 }
-
+// marker X
 .cell.x {
     &::before,&::after {
       content: '';
@@ -58,5 +58,23 @@ body {
     }
     &::after {
       transform: rotate(-45deg);
+    }
+}
+// mark circle
+.cell.circle {
+    &::before,&::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+    &::before {
+      background-color: black;
+      width: $mark-size;
+      height: $mark-size;
+    }
+    &::after {
+      background-color: #ffffff;
+      width: $mark-size*.7;
+      height: $mark-size*.7;
     }
 }
