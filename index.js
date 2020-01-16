@@ -9,11 +9,14 @@ const cells = document.querySelectorAll('[data-cell]')
 const board = document.querySelector('.board')
 const winningMessage = document.getElementById('winningMessage')
 const winningMessageText = document.querySelector('[data-winning-message-text]')
+const resetButton = document.getElementById('resetButton')
 
 // gameStart
 startGame()
 
-// handler
+// handler and functions
+resetButton.addEventListener('click', resetGame)
+
 function handleClick(e) {
   // place mark
   const cell = e.target
@@ -47,6 +50,15 @@ function endGame(draw) {
     winningMessageText.innerText = `${circleTurns ? 'O wins!' : 'X wins!'}`
   }
   winningMessage.classList.add('show')
+}
+
+function resetGame() {
+  cells.forEach(item => {
+    item.classList.remove(xClass)
+    item.classList.remove(circleClass)
+  })
+  winningMessage.classList.remove('show')
+  startGame()
 }
 
 function placeMark(cell, currentClass) {
