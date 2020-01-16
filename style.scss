@@ -1,0 +1,27 @@
+@import "./variables";
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3,auto);
+}
+
+.cell {
+  width: $cell-size;
+  height: $cell-size;
+  background-color:$cell-color;
+  border: $cell-border;
+}
