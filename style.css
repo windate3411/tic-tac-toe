@@ -102,4 +102,22 @@ body {
   width: 63px;
   height: 63px;
 }
+
+.board.x .cell:not(.x):not(.circle):hover::before, .board.x .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  width: 13.5px;
+  height: 90px;
+  background-color: lightgray;
+}
+
+.board.x .cell:hover::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.board.x .cell:hover::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
 /*# sourceMappingURL=style.css.map */

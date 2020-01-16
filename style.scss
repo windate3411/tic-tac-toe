@@ -48,7 +48,7 @@ body {
 
 // marker X
 .cell.x {
-    &::before,&::after {
+    &::before,&::after{
       content: '';
       position: absolute;
       width: $mark-size*0.15;
@@ -82,4 +82,21 @@ body {
       height: $mark-size*.7;
     }
     cursor: not-allowed;
+}
+
+// board x hover 
+.board.x .cell:not(.x):not(.circle):hover::before,.board.x .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  width: $mark-size*0.15;
+  height: $mark-size;
+  background-color:$hover-color;
+}
+.board.x .cell:hover{
+  &::before{
+     transform: rotate(45deg);
+  }
+  &::after{
+     transform: rotate(-45deg);
+  }
 }
